@@ -8,21 +8,23 @@
 # if “n” the program will exit.
 
 """
-In this program, I will use random module and time module.
+In this program, I will use random module.
 """
 import random
-import time
 
-winningNum = [] # A variable with an empty list designated to store the 3 required random numbers
+def winning_num():
+    winningNum = []
+    for i in range(3):
+        winningN = random.randint(0,9)
+        winningNum.append(winningN)
+    return winningNum
+def user_num():
+    userInput = []
+    for i in range(3):
+        userNums = int(input("Please enter a number: "))
+        userInput.append(userNums)
+    return userInput
 
-for i in range(0,3): # for loop to assign a maximum of three(3) numbers
-    randNum = random.randint(0, 9)  # a special variable whose to generate random integers ranging from 0-9 
-    
-    # while functionality to generate unique numbers
-    while randNum in winningNum:
-        randNum = random.randint(0, 9)
-    # after generating unique random numbers it will now be stored/add to the empty list using the ".append" command. 
-    winningNum.append(randNum)
-winningNum.sort() # Sort the generated winning numbers ascending to look more organized.and.
-# Display the winning numbers.
-print(f"The winning numbers are {winningNum}")
+winNum = winning_num()
+userNum = user_num()
+print(f"Your number is {userNum}\nThe winning number is {winNum}\n")
