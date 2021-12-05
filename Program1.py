@@ -16,11 +16,27 @@ def get_randWinNum():
     return [randWinNum1, randWinNum2, randWinNum3]
 
 def get_userNums():
-    userNum1 = input("\nEnter your first entry number: ")
-    userNum2 = input("Enter your second entry number: ") 
-    userNum3 = input("Enter your third entry number: ")
-    return [int(userNum1), int(userNum2), int(userNum3)]
-
+    while True:
+        try:
+            while True:
+                userNum1 = input("\nEnter your first entry number: ")
+                if int(userNum1) > 9 or int(userNum1) <= -1:
+                    print("The number must be ranging from 0 to 9.")
+                else:
+                    while True:
+                        userNum2 = input("Enter your second entry number: ") 
+                        if int(userNum2) > 9 or int(userNum2) <= -1:
+                            print("The number must be ranging from 0 to 9.")
+                        else:    
+                            while True:
+                                userNum3 = input("Enter your third entry number: ")
+                                if int(userNum3) > 9 or int(userNum3) <= -1:
+                                    print("The number must be ranging from 0 to 9.")
+                                else:
+                                    return [int(userNum1), int(userNum2), int(userNum3)]
+        except ValueError or EOFError:
+            print("\n[Invalid Input]\nKeep in mind that the Lottery's System only accepts NUMBERS.\nPease try again.")
+        
 userInterface = "try again"
 repeatX = "y"
 while userInterface == "try again":
