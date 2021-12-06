@@ -31,4 +31,4 @@ while randNum != "user guess":
         randNum = "user guess"
 else:
     #Display the result after guessing the number correctly
-    print(f"\nYou successfully guessed the mystery number\nMystery Number: {randNum}\nYour guess: {userGuess}\nCongratulations!\n")
+    print(f"\nCongratulations!\nYou successfully guessed the mystery number!\nnYour guess: {userGuess}\n")
