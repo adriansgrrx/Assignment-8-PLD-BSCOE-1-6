@@ -9,9 +9,13 @@
 This program will use randrange module from random library. 
 """
 from random import randrange
+import time
 
 # Greetings
 print("\nWelcome to Guess the Mystery Number!")
+time.sleep(2)
+print("\nInstructions:\n1. In this program, the user is required to enter his/her guess.\n2. The user have unlimited guess until getting into the mystery number.\n3. The system don't process inputs that is negative. The number should only range from 0 to 100.\n4. The system will give hints for every incorrect guess like [Greater than] and [Less than].\n5. Lastly, enjoy and have fun!")
+time.sleep(2)
 
 # generate a number from 0-100
 randNum = randrange(0,100)  #randNum variable = random number
@@ -28,14 +32,12 @@ while randNum != "user guess":
                 print("[Incorrect]\nHINT: Less than")
         elif int(userGuess) == int(randNum): # condition if the user guess matched the random number
             randNum = "user guess"
-        
         if int(userGuess) > 100:
             print("Please try again. Keep in mind that the system range is from 0 to 100 ONLY.")
             continue;
         elif int(userGuess) < 0:
             print("Please try again. Keep in mind that the system range is from 0 to 100 ONLY.")
-            continue;
-            
+            continue;   
     # I used the except functionality for error validation specifically ValueError and EOFError 
     # just to be sure that the program wont exit resuting from any error inputs
     except ValueError or EOFError:
